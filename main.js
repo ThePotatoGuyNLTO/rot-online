@@ -6,6 +6,10 @@ let variable_values = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
 let change = false
 
+let contin = true
+
+let input = false
+
 load()
 
 function fanum(input) {
@@ -46,7 +50,12 @@ function fanum(input) {
         output = variable_values
         let variable = input.charAt(6).charCodeAt(0)-97
         output = variable_values[variable]
+        input = true
     }
+}
+
+function contin_input() {
+    contin = true
 }
 
 function declare(input) {
@@ -83,9 +92,13 @@ function declare(input) {
     }
     variable_values[variable] = number
     } else {
-        let variable = input.charAt(6).charCodeAt()-97
-        variable_values[variable] = document.getElementById("input_console").value
-        document.getElementById("output").innerText += ">"+document.getElementById("input_console").value + "\n"
+        if (input.includes("$")) {
+            if (input.includes("fade")) {
+                let variable = input.charAt(6).charCodeAt()-97
+                variable_values[variable] = document.getElementById("input_console").value
+                document.getElementById("output").innerText += ">"+document.getElementById("input_console").value + "\n"      
+            }
+        }
     }
 }
 
@@ -177,13 +190,9 @@ function previewFile() {
 function interpret() {
     variable_values = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     code_as_array = document.getElementById("code").value.split("\n")
-    for (let index = 0;index < code_as_array.length;index ++) {
-        run_code(code_as_array[index])
-        if (!(document.getElementById.innerText == "")) {
-            document.getElementById("code").style.borderStyle = "solid"
-        } else {
-            document.getElementById("code").style.borderStyle = "none"
-        }
+    for (let index = 0;index < code_as_array.length;) {
+            run_code(code_as_array[index])
+            index ++
     }
 }
 

@@ -11,10 +11,20 @@
     }
 </style>
 
-<textarea oninput="txt_box_change()" id="code" spellcheck="false"></textarea> <br> <br>
+<div class="container">
+    <div class="backdrop">
+      <div class="custom-area">
+          <!-- Cloned text with colors will go here -->
+      </div>
+    </div>
+    <textarea oninput="txt_box_change()" id="code" spellcheck="false"></textarea>
+  </div>
+
+  <br> <br>
 
 <button onclick="interpret()">run</button>
 <button onclick="cls()">clear console</button>
+<button onclick="contin_input()">continue</button>
 
 <br>
 <br>
@@ -27,6 +37,7 @@
 <div id="output"></div>
 
 <script src = "main.js"></script>
+<script src = "colors.js"></script>
 
 <br>
 <br>

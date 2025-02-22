@@ -4,8 +4,10 @@
     resize: none;
     border-radius: 0px;
     background-color: black;
-    color: white;
+    color: rgb(0, 0, 0);
     font-family: custom_font;
+    caret-color: white;
+    transform: translate(0px,0px);
 }
 #output {
     width: 345px;
@@ -25,3 +27,25 @@
     overflow: none;
     border: none;
 }
+  
+  .backdrop {
+    position: absolute;
+    z-index: 1;
+    border: 2px solid transparent;
+    overflow: auto;
+    pointer-events: none;
+  }
+  
+  .custom-area {
+    width: 345px;
+    height: 200px;
+    resize: none;
+    border-radius: 0px;
+    color: white;
+    font-family: custom_font;
+
+    font-size: 13.5px;
+
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
